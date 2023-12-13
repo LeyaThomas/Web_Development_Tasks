@@ -31,11 +31,16 @@ randomize.addEventListener('click', result);
 
 function result() {
   const newStory=storyText;
-  const xItem=randomValueFromArray();
-  const yItem=randomValueFromArray();
-  const zItem=randomValueFromArray();
+  const xItem=randomValueFromArray(insertX);
+  const yItem=randomValueFromArray(insertY);
+  const zItem=randomValueFromArray(insertZ);
+  newStory=newStory.replace(':insertx:',xItem);
+  newStory=newStory.replace(':inserty:',yItem);
+  newStory=newStory.replace(':insertz:',zItem);
+  
 
   if(customName.value !== '') {
+    newStory=newStory.replace('Bob',customName.value);
     const name = customName.value;
 
   }
